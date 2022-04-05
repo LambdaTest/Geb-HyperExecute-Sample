@@ -1,0 +1,23 @@
+---
+version: "0.1"
+globalTimeout: 90
+testSuiteTimeout: 90
+testSuiteStep: 90
+matrix:
+  os: [mac]
+  method: ["BingSpecPageGebSpec#Hypertest", "BingSpecPageGebSpec#Lamdbdatest", "BingSpecPageGebSpec#Test_Ocrchestration"]
+runson: ${matrix.os}
+autosplit: true
+retryOnFailure: true
+maxRetries: 5
+parallelism: 2
+pre:
+  - mvn compile
+  - mvn versions:display-dependency-updates
+testDiscovery:
+  type: raw
+  mode: dynamic
+  command: ./test.sh | sed  "s/\\\"/\\\\\"/g" #mac
+  # command: sh test.sh | sed  "s/\\\"/\\\\\"/g" #win
+testRunnerCommand: mvn -Dlambdageb.capabilities="$test" clean test -Dtest=${matrix.method}  #mac
+# testRunnerCommand: mvn `-Dlambdageb.capabilities="$test" clean test `-Dtest=${matrix.method}  #win

@@ -1,0 +1,12 @@
+---
+version: "0.1"
+matrix:
+  os: [mac]
+  method: ["BingSpecPageGebSpec#Hypertest", "BingSpecPageGebSpec#Lamdbdatest", "BingSpecPageGebSpec#Test_Ocrchestration"]
+runson: ${matrix.os}
+pre:
+  - mvn compile
+  - mvn versions:display-dependency-updates
+testSuites:
+  - ./run.sh $method #mac
+  # - sh run.sh $method #win
