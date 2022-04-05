@@ -10,20 +10,20 @@ The overall experience helps teams test code and fix issues at a much faster pac
 
 To know more about how HyperExecute does intelligent Test Orchestration, do check out [HyperExecute Getting Started Guide](https://www.lambdatest.com/support/docs/getting-started-with-hyperexecute/)
 
-# How to run Selenium automation tests on HyperExecute (using Ruby-Capybara framework)
+# How to run Selenium automation tests on HyperExecute (using Geb-Spock framework)
 
 * [Pre-requisites](#pre-requisites)
    - [Download Concierge](#download-concierge)
    - [Configure Environment Variables](#configure-environment-variables)
 
-* [Matrix Execution with Ruby-Capybara](#matrix-execution-with-ruby-capybara-framework)
+* [Matrix Execution with Geb-Spock](#matrix-execution-with-Geb-Spock-framework)
    - [Core](#core)
    - [Pre Steps and Dependency Caching](#pre-steps-and-dependency-caching)
    - [Post Steps](#post-steps)
    - [Artefacts Management](#artefacts-management)
    - [Test Execution](#test-execution)
 
-* [Auto-Split Execution with Ruby-Capybara](#auto-split-execution-with-ruby-capybara-framework)
+* [Auto-Split Execution with Geb-Spock](#auto-split-execution-with-Geb-Spock-framework)
    - [Core](#core-1)
    - [Pre Steps and Dependency Caching](#pre-steps-and-dependency-caching-1)
    - [Post Steps](#post-steps-1)
@@ -72,7 +72,7 @@ set LT_USERNAME=LT_USERNAME
 set LT_ACCESS_KEY=LT_ACCESS_KEY
 ```
 
-# Matrix Execution with Ruby Capybara Framework
+# Matrix Execution with Geb Spock Framework
 
 Matrix-based test execution is used for running the same tests across different test (or input) combinations. The Matrix directive in HyperExecute YAML file is a *key:value* pair where value is an array of strings.
 
@@ -96,7 +96,7 @@ The target platform is set to Windows. Please set the *[runson]* key to *[win]* 
 runson: win
 ```
 
-Ruby-Capybara groovy files in the 'groovy' folder contain the groovy Scenario run on the HyperExecute grid. In the example, the groovy file *groovy/BingSpecPageGebSpec.groovy* run in parallel on the basis of scenario by using the groovys field input combinations.
+Geb-Spock groovy files in the 'groovy' folder contain the groovy Scenario run on the HyperExecute grid. In the example, the groovy file *groovy/BingSpecPageGebSpec.groovy* run in parallel on the basis of scenario by using the groovys field input combinations.
 
 ```yaml
 matrix:
@@ -140,7 +140,7 @@ The CLI option *--config* is used for providing the custom HyperExecute YAML fil
 Visit [HyperExecute Automation Dashboard](https://automation.lambdatest.com/hyperexecute) to check the status of execution:
 
 
-## Auto-Split Execution with Ruby Capybara Framework
+## Auto-Split Execution with Geb Spock Framework
 
 Auto-split execution mechanism lets you run tests at predefined concurrency and distribute the tests over the available infrastructure. Concurrency can be achieved at different levels - file, module, test suite, test, scenario, etc.
 
@@ -221,7 +221,7 @@ testRunnerCommand: sh run.sh $test #win
 
 ### Test Execution
 
-The CLI option *--config* is used for providing the custom HyperExecute YAML file (i.e. *hyperexecute_matrix.yaml*). Run the following command on the terminal to trigger the tests in Ruby groovy files on the HyperExecute grid. The *--download-artifacts* option is used to inform HyperExecute to download the artefacts for the job.
+The CLI option *--config* is used for providing the custom HyperExecute YAML file (i.e. *hyperexecute_matrix.yaml*). Run the following command on the terminal to trigger the tests in Geb groovy files on the HyperExecute grid. The *--download-artifacts* option is used to inform HyperExecute to download the artefacts for the job.
 
 ```bash
 ./concierge --config --verbose -i yaml/.hyperexecute_matrix.yaml
