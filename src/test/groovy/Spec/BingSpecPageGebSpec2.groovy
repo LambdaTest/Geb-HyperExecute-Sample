@@ -9,7 +9,7 @@ import geb.driver.CachingDriverFactory
 
 class BingSpecPageGebSpec2 extends BasePageGebSpec {
 
-  def Hypertest() {
+  def Hypertest2() {
       String q = "Hypertest"
       DuckDuckGoResultPage.searchWord = q
 
@@ -284,7 +284,7 @@ class BingSpecPageGebSpec2 extends BasePageGebSpec {
       waitFor {at DuckDuckGoResultPage}
 
   }
-  def Lamdbdatest() {
+  def Lamdbdatest2() {
       String q = "lamdbdatest"
       DuckDuckGoResultPage.searchWord = q
 
@@ -559,7 +559,7 @@ class BingSpecPageGebSpec2 extends BasePageGebSpec {
       waitFor {at DuckDuckGoResultPage}
 
   }
-  def Test_Ocrchestration() {
+  def Test_Ocrchestration2() {
       String q = "test ocrchestration"
       DuckDuckGoResultPage.searchWord = q
 
