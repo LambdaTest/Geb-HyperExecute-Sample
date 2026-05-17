@@ -26,19 +26,19 @@ To know more about how HyperExecute does intelligent Test Orchestration, check o
 
 ### Prerequisites
 
-Before using HyperExecute, you have to download the Concierge CLI corresponding to the host OS. Along with it, you also need to export the environment variables `LT_USERNAME` and `LT_ACCESS_KEY` that are available on your [TestMu AI Profile](https://accounts.lambdatest.com/detail/profile) page.
+Before using HyperExecute, you have to download the HyperExecute CLI corresponding to the host OS. Along with it, you also need to export the environment variables `LT_USERNAME` and `LT_ACCESS_KEY` that are available on your [TestMu AI Profile](https://accounts.lambdatest.com/detail/profile) page.
 
 - Java 8 or later
 - Maven
 - Groovy / Spock
 
-### Download Concierge
+### Download HyperExecute CLI
 
-Concierge is a CLI for interacting and running the tests on the HyperExecute Grid. Download the binary corresponding to your platform:
+HyperExecute CLI is a CLI for interacting and running the tests on the HyperExecute Grid. Download the binary corresponding to your platform:
 
-* Mac: https://downloads.lambdatest.com/concierge/darwin/concierge
-* Linux: https://downloads.lambdatest.com/concierge/linux/concierge
-* Windows: https://downloads.lambdatest.com/concierge/windows/concierge.exe
+* Mac: https://downloads.lambdatest.com/hyperexecute/darwin/hyperexecute
+* Linux: https://downloads.lambdatest.com/hyperexecute/linux/hyperexecute
+* Windows: https://downloads.lambdatest.com/hyperexecute/windows/hyperexecute.exe
 
 It is recommended to download the binary in the project's parent directory.
 
@@ -124,7 +124,7 @@ HyperExecute also facilitates the provision to download the artefacts on your lo
 The CLI option `--config` is used for providing the custom HyperExecute YAML file. Run the following command on the terminal to trigger the tests in groovy file Scenario on the HyperExecute grid:
 
 ```bash
-./concierge --config --verbose -i yaml/hyperexecute_matrix.yaml
+./hyperexecute --config --verbose -i yaml/hyperexecute_matrix.yaml
 ```
 
 Visit the [HyperExecute Automation Dashboard](https://automation.lambdatest.com/hyperexecute) to check the status of execution.
@@ -196,7 +196,7 @@ BingSpecPageGebSpec2#Test_Ocrchestration
 Run the following command on the terminal to trigger the tests in Geb groovy files on the HyperExecute grid:
 
 ```bash
-./concierge --config --verbose -i yaml/.hyperexecute_matrix.yaml
+./hyperexecute --config --verbose -i yaml/.hyperexecute_matrix.yaml
 ```
 
 Visit the [HyperExecute Automation Dashboard](https://automation.lambdatest.com/hyperexecute) to check the status of execution.
@@ -225,13 +225,13 @@ HyperExecute lets you navigate from/to *Test Logs* in Automation Dashboard from/
 **Matrix mode:**
 
 ```bash
-./concierge --config --verbose -i yaml/hyperexecute_matrix.yaml
+./hyperexecute --config --verbose -i yaml/hyperexecute_matrix.yaml
 ```
 
 **Auto-split mode:**
 
 ```bash
-./concierge --config --verbose -i yaml/hyperexecute_autosplit.yaml
+./hyperexecute --config --verbose -i yaml/hyperexecute_autosplit.yaml
 ```
 
 View results on your TestMu AI dashboard.
